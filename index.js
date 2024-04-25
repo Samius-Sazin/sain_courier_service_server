@@ -98,7 +98,7 @@ async function run() {
             res.send(services);
         })
 
-        //Add a anew service, get data from react, add to db
+        //Add a new service, get data from react, add to db
         app.post('/add-new-service', async (req, res) => {
             //service that need to be insert
             const newService = req.body;
