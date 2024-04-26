@@ -116,7 +116,7 @@ run().catch(console.dir);
 
 //Send response From Server
 app.get('/', (req, res) => {
-    res.send("Responsing from 5000");
+    res.send("Responsing from PORT : ", port);
 })
 
 app.listen(port, () => {
