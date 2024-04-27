@@ -56,6 +56,8 @@ async function run() {
         app.post('/book-service', async (req, res) => {
             //object that need to be insert
             const bookingInfo = req.body;
+            //get time and add to bookingInfo
+            bookingInfo.bookingAt = new Date();
             //Insert document into the booking_info collection
             const result = await bookingInfoCollection.insertOne(bookingInfo);
             //sending the response
@@ -116,7 +118,7 @@ run().catch(console.dir);
 
 //Send response From Server
 app.get('/', (req, res) => {
-    res.send("Responsing from PORT : ", port);
+    res.send("Responsing");
 })
 
 app.listen(port, () => {
