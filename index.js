@@ -57,7 +57,7 @@ async function run() {
             //object that need to be insert
             const bookingInfo = req.body;
             //get time and add to bookingInfo
-            bookingInfo.bookingAt = new Date();
+            bookingInfo.bookedAt = new Date();
             //Insert document into the booking_info collection
             const result = await bookingInfoCollection.insertOne(bookingInfo);
             //sending the response
